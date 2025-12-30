@@ -37,7 +37,7 @@ export default function ContactSection() {
       >
         <ScrollAnimation animationType="fade-down" delay={100}>
           <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-12 drop-shadow-lg text-green-400">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
         </ScrollAnimation>
 

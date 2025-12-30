@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef, useCallback, ReactNode } from "react";
 
 interface ScrollAnimationProps {
     children: ReactNode;
@@ -18,7 +18,7 @@ export default function ScrollAnimation({
     const elementRef = useRef<HTMLDivElement>(null);
     const hasAnimatedRef = useRef(false);
 
-    const triggerAnimation = () => {
+    const triggerAnimation = useCallback(() => {
         const currentElement = elementRef.current;
         if (currentElement && !hasAnimatedRef.current) {
             setTimeout(() => {
@@ -28,7 +28,7 @@ export default function ScrollAnimation({
                 }
             }, delay);
         }
-    };
+    }, [delay]);
 
     useEffect(() => {
         const currentElement = elementRef.current;
@@ -99,7 +99,7 @@ export default function ScrollAnimation({
             window.removeEventListener("scroll", handleScroll);
             clearInterval(checkInterval);
         };
-    }, [delay]);
+    }, [triggerAnimation]);
 
     return (
         <div

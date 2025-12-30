@@ -40,14 +40,15 @@ export default function AnimatedCursor() {
     // Check for interactive elements on mouse move
     const checkHover = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const isInteractive =
+      const isInteractive = Boolean(
         target.tagName === "A" ||
         target.tagName === "BUTTON" ||
         target.closest("a") ||
         target.closest("button") ||
         target.closest('[role="button"]') ||
         target.style.cursor === "pointer" ||
-        window.getComputedStyle(target).cursor === "pointer";
+        window.getComputedStyle(target).cursor === "pointer"
+      );
       setIsHovering(isInteractive);
     };
 

@@ -25,7 +25,7 @@ export default function HomeSection() {
           {/* Heading and Summary: shown second on mobile */}
           <div className="order-2 md:order-1 w-full md:w-1/2 text-center md:text-left font-inter">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg break-words leading-tight">
-              Hi, I'm{" "}
+              Hi, I&apos;m{" "}
               <span className="text-green-400 font-pacifico text-5xl md:text-6xl transition-transform duration-300 hover:scale-105">
                 Ahmad Ushay
               </span>
